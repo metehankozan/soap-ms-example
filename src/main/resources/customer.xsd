@@ -46,4 +46,27 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <!-- 1) the header element -->
+    <xs:element name="CustomerIdHeader">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- 2) an empty body request -->
+    <xs:element name="GetCustomerRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <!-- 3) the response carrying one Customer -->
+    <xs:element name="GetCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:Customer" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
